@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Rudra</string>
+    <string name="Connection_Button">Connect</string>
+    <string name="bot_name">Sensor Name : </string>
+    <string name="connection_url">Sensor IP : </string>
+    <string name="robot_status"> </string>
+
+</resources>
