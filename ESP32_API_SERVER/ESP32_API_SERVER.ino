@@ -15,7 +15,7 @@ WiFiMulti wifiMulti;
 
 WebServer server(80);
 
-int data[2];
+int data[4];
 
 void handleRoot() {
   String webPage = " " ;//<script> setTimeout('location.reload(true);', 1000);</script>";
@@ -27,6 +27,8 @@ void handleRoot() {
   JsonObject& root = jsonBuffer.createObject();
   root["Temperature"] = data[0];
   root["Humidity"] = data[1];
+  root["Flame_Sensor"] = data[2];
+  root["Knock_Sensor"] = data[3];
 
   root.printTo(Json);  //Store JSON in String variable
   server.send(200, "text/html", Json + webPage);
