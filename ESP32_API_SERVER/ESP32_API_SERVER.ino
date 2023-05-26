@@ -27,8 +27,13 @@ void handleRoot() {
   JsonObject& root = jsonBuffer.createObject();
   root["Temperature"] = data[0];
   root["Humidity"] = data[1];
+<<<<<<< HEAD
   root["Knock"] = data[2];
   root["Sound"] = data[3];
+=======
+  root["Flame_Sensor"] = data[2];
+  root["Knock_Sensor"] = data[3];
+>>>>>>> origin/main
 
   root.printTo(Json);  //Store JSON in String variable
   server.send(200, "text/html", Json + webPage);
