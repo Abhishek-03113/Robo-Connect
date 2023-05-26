@@ -15,7 +15,7 @@ WiFiMulti wifiMulti;
 
 WebServer server(80);
 
-int data[2];
+int data[4];
 
 void handleRoot() {
   String webPage = " " ;//<script> setTimeout('location.reload(true);', 1000);</script>";
@@ -27,6 +27,8 @@ void handleRoot() {
   JsonObject& root = jsonBuffer.createObject();
   root["Temperature"] = data[0];
   root["Humidity"] = data[1];
+  root["Knock"] = data[2];
+  root["Sound"] = data[3];
 
   root.printTo(Json);  //Store JSON in String variable
   server.send(200, "text/html", Json + webPage);
@@ -62,6 +64,8 @@ void loop() {
   Serial.println(humidity);
   data[1]= humidity ;
   data[0] = temperature_c ;
+  data[2] = read_sound(); // should return Decible value as response 
+  data[3] = read_knock(); // Set this value as 0 or 1 as the array is an integer array 
   delay(2000);
 
 
