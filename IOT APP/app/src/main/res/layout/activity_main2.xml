@@ -12,39 +12,19 @@
 
 
     <TextView
-        android:id="@+id/spell"
-        android:layout_width="185dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="15dp"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001" />
-
-    <TextView
         android:id="@+id/botnamee"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="-50dp"
         android:layout_marginStart="40dp"
-        android:text="SENSOR NAME"
+        android:layout_marginTop="-50dp"
+        android:text="SENSOR MONITOR"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.35"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -53,16 +33,16 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="187dp"
-        android:layout_height="178dp"
+        android:layout_width="186dp"
+        android:layout_height="163dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintHorizontal_bias="0.928"
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16"
-        app:srcCompat="@drawable/wifi"
+        app:layout_constraintVertical_bias="0.184"
+        app:srcCompat="@drawable/iot_removebg_preview"
         tools:ignore="ContentDescription" />
 
     <androidx.cardview.widget.CardView
@@ -81,11 +61,11 @@
 
         <TextView
             android:id="@+id/BOTSTATUS"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="45dp"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
-            android:text="Status"
+            android:text="Knock Sensor"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -95,10 +75,11 @@
         <TextView
             android:id="@+id/Connection"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="80dp"
             android:text="Status :"
+            android:textSize="15sp"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -115,7 +96,8 @@
             android:layout_marginStart="75dp"
             android:layout_marginTop="80dp"
 
-            android:textColor="@color/green"
+            android:textColor="@color/black"
+
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
@@ -130,11 +112,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.581">
+        app:layout_constraintVertical_bias="0.542">
+        <TextView
+            android:id="@+id/Temperature_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="10dp"
 
+
+            android:text="Temperature Sensor "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/Temp"
             android:layout_width="wrap_content"
@@ -183,6 +177,63 @@
 
             android:text=" "
             android:textSize="25dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="414dp"
+        android:layout_height="196dp"
+        android:elevation="11dp"
+        app:cardBackgroundColor="@color/blue"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.943">
+
+        <TextView
+            android:id="@+id/Sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="10dp"
+
+
+            android:text="Sound Sensor "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/SoundSens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="95dp"
+
+            android:text="Sound Volume :"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/SoundData"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="95dp"
+
+            android:text=" "
+            android:textSize="25dp"
+            tools:ignore="HardcodedText" />
+
+
     </androidx.cardview.widget.CardView>
 
 

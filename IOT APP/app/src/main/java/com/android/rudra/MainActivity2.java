@@ -1,5 +1,6 @@
 package com.android.rudra;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -23,9 +24,9 @@ import org.json.JSONObject;
 
 
 public class MainActivity2 extends AppCompatActivity {
-    protected TextView Temperature, Humidity,Name,connected;
+    protected TextView Temperature, Humidity,Name,Knock_listen,Sound_Read;
 
-    public String temp,hum,connection;
+    public String temp,hum,knock,sound;
     RequestQueue requestQueue;
     JsonObjectRequest request;
 
@@ -36,16 +37,17 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         Temperature = findViewById(R.id.TempData);
         Humidity  = findViewById(R.id.HumData);
-        connected = findViewById(R.id.connected);
+        Knock_listen = findViewById(R.id.connected);
+        Sound_Read = findViewById(R.id.SoundData);
 
-        Name = findViewById(R.id.spell);
+//        Name = findViewById(R.id.spell);
         SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
 
-        String botname = sh.getString("name", "");
+        //String botname = sh.getString("name", "");
+
         String url = sh.getString("url", "");
 
-        Name.setText(botname);
-        connected.setText("Not Connected ");
+       // Name.setText(botname);
         String ipadd = url;
 
 
@@ -59,21 +61,30 @@ public class MainActivity2 extends AppCompatActivity {
                 Log.d("test", "Timer tick");
                 String url = "http://" + ipadd;
                 request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @SuppressLint("SetTextI18n")
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
 
                             temp = response.getString("Temperature")+"C";
                             hum = response.getString("Humidity")+"%";
+                            knock = response.getString("Knock");
+                            sound = response.getString("Sound")+"dB";
 
-                            if (!temp.isEmpty())
+
+
+
+                            if (knock.equals("1"))
                             {
-                                connected.setText("Connected");
+                                Knock_listen.setText("Knock Heard");
+                            }
+                            else if (knock.equals("0")) {
+                                Knock_listen.setText("No Knock Heard");
                             }
 
-                                Temperature.setText(temp);
-
+                            Temperature.setText(temp);
                             Humidity.setText(hum);
+                            Sound_Read.setText(sound);
 
 
                         } catch (JSONException e) {

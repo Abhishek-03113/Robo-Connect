@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     Button Login;
     public EditText name;
     public EditText ip;
-    static public String botname;
     static public String boturl;
 
     @Override
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Login = (Button) findViewById(R.id.button);
-        name = (EditText) findViewById(R.id.name);
+//        name = (EditText) findViewById(R.id.name);
         ip = (EditText) findViewById(R.id.url);
 
 
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                 SharedPreferences.Editor myEdit = sharedPreferences.edit();
 
-                myEdit.putString("name", name.getText().toString());
+                //myEdit.putString("name", name.getText().toString());
                 myEdit.putString("url", ip.getText().toString());
 
                 myEdit.apply();
