@@ -1,8 +1,3 @@
 # Robo-Connect
 
-# THE HARDWARE USED FOR THE PROJECT 
-
-1. ESP32 WiFi Module 
-2. A DHT11 Temperature Sensor ( Any Sensor Will work, I had the DHT11 So I used it ) 
-
-# Architecture Used for the project 
+This project presents an Android application designed for real-time sensor data monitoring using a REST-based API. The growing importance of sensor data collection and analysis across various industries has necessitated a user-friendly and efficient solution for monitoring this data
