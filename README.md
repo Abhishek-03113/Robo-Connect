@@ -1,4 +1,4 @@
-# IOT-applicatiotion-for-real-time-sensor-monitoring
+# Robo-Connect
 
 # THE HARDWARE USED FOR THE PROJECT 
 
